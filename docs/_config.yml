@@ -2,7 +2,6 @@ title: "СтиланаБел — сервис оргтехники в Минск
 description: "Заправка картриджей и ремонт принтеров с выездом в офис. Работаем с 2016 года."
 baseurl: ""
 url: "https://service.stilanabel.by"
-source: .
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
@@ -11,7 +10,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 exclude:
-  - README.md
   - Gemfile
   - Gemfile.lock
   - _site
