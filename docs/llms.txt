@@ -14,5 +14,9 @@
 - [Отзывы клиентов](https://service.stilanabel.by/#reviews): Ссылки на профили в Яндекс.Картах и Google Maps.
 - [Контакты](https://service.stilanabel.by/#contacts): Телефон, Viber, Telegram, email для заявок.
 
+## Блог
+- [Блог — полезные советы](https://service.stilanabel.by/blog/): Статьи от наших сервисных инженеров.
+- [Почему принтер печатает с полосами](https://service.stilanabel.by/2026/11/03/chistka-printera.html): Как самостоятельно диагностировать и исправить проблемы печати.
+
 ## Optional
 - [Интернет-магазин StilanaBel.by](https://stilanabel.by/): Основной сайт с каталогом канцтоваров и расходных материалов.
