@@ -1,0 +1,8 @@
+# Jekyll
+Gemfile.lock
+_site/
+.jekyll-cache/
+
+# OS
+.DS_Store
+Thumbs.db

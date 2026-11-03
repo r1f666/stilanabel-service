@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post__header">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="post__desc">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post__body">
+    {{ content }}
+  </div>
+
+  <footer class="post__footer">
+    <a href="/blog/">← Все статьи</a>
+  </footer>
+</article>

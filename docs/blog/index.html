@@ -1,0 +1,26 @@
+---
+layout: default
+title: Блог — полезные советы по обслуживанию оргтехники
+description: Статьи от наших сервисных инженеров о заправке картриджей, ремонте принтеров и обслуживании офисной техники.
+---
+<section class="section">
+  <div class="wrap">
+    <h2>Блог</h2>
+    <p class="sub">Практические советы от наших сервисных инженеров. Делимся реальным опытом обслуживания офисной техники в Минске.</p>
+
+    {% if site.posts > 0 %}
+    <div class="blog-list">
+      {% for post in site.posts limit: 10 %}
+      <article class="blog-card">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B %Y' }}</time>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="blog-card__excerpt">{{ post.description | escape }}</p>
+        <a class="blog-card__link" href="{{ post.url }}">Читать далее →</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>Статей пока нет. Скоро добавим!</p>
+    {% endif %}
+  </div>
+</section>
