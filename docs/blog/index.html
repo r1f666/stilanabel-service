@@ -8,9 +8,10 @@ description: Статьи от наших сервисных инженеров 
     <h2>Блог</h2>
     <p class="sub">Практические советы от наших сервисных инженеров. Делимся реальным опытом обслуживания офисной техники в Минске.</p>
 
-    {% if site.posts > 0 %}
+    {% assign sorted_posts = site.posts | reverse %}
+    {% if sorted_posts.size > 0 %}
     <div class="blog-list">
-      {% for post in site.posts limit: 10 %}
+      {% for post in sorted_posts limit: 10 %}
       <article class="blog-card">
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B %Y' }}</time>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
