@@ -77,16 +77,18 @@
   <main id="main">
     {% if page.breadcrumbs %}
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      {% for crumb in page.breadcrumbs %}
-        {% if forloop.last %}
-          <span class="breadcrumbs__current">{{ crumb.text }}</span>
-        {% else %}
-          <a href="{{ crumb.url }}">{{ crumb.text }}</a>
-        {% endif %}
-        {% unless forloop.last %}
-          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-        {% endunless %}
-      {% endfor %}
+      <div class="wrap">
+        {% for crumb in page.breadcrumbs %}
+          {% if forloop.last %}
+            <span class="breadcrumbs__current">{{ crumb.text }}</span>
+          {% else %}
+            <a href="{{ crumb.url }}">{{ crumb.text }}</a>
+          {% endif %}
+          {% unless forloop.last %}
+            <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          {% endunless %}
+        {% endfor %}
+      </div>
     </nav>
     {% endif %}
     {{ content }}
