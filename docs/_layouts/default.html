@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{ page.title }} — {{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0D1B2A">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
