@@ -59,6 +59,9 @@
 
   <header class="top">
     <div class="wrap top__in">
+      <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
       <a class="logo" href="/" aria-label="СтиланаБел — сервис оргтехники">
         <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span class="logo__text">СтиланаБел <small>сервис оргтехники</small></span>
@@ -73,6 +76,15 @@
       <a class="top__tel" href="tel:+375447833725">+375 44 783-37-25</a>
     </div>
   </header>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="/">Главная</a>
+    <a href="/#services">Услуги</a>
+    <a href="/#prices">Цены</a>
+    <a href="/blog/">Блог</a>
+    <a href="/#steps">Как работаем</a>
+    <a href="/#contacts">Контакты</a>
+  </div>
 
   <main id="main">
     {% if page.breadcrumbs %}

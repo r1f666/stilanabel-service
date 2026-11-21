@@ -19,4 +19,27 @@
       if (typeof window.gtag === 'function') window.gtag('event', goal, { event_category: 'contact' });
     } catch (err) { /* аналитика не должна ломать сайт */ }
   });
+
+  // Бургер-меню
+  var burger = document.querySelector('.burger');
+  var mobileNav = document.querySelector('.mobile-nav');
+  if (burger && mobileNav) {
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      mobileNav.hidden = open;
+    });
+    // Закрыть при клике на ссылку
+    mobileNav.addEventListener('click', function () {
+      burger.setAttribute('aria-expanded', 'false');
+      mobileNav.hidden = true;
+    });
+    // Сбросить при ресайзе выше 900px
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) {
+        burger.setAttribute('aria-expanded', 'false');
+        mobileNav.hidden = true;
+      }
+    });
+  }
 })();

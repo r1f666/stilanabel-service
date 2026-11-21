@@ -1,10 +1,15 @@
+---
+layout: default
+title: Заправка картриджей и ремонт принтеров в Минске — выезд в офис | СтиланаБел
+description: Заправка картриджей от 22 BYN и ремонт принтеров от 35 BYN с выездом в офис по Минску. Гарантия 6 месяцев, документы с НДС, каждая 7-я заправка бесплатно.
+---
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Заправка картриджей и ремонт принтеров в Минске — выезд в офис | СтиланаБел</title>
-  <meta name="description" content="Заправка картриджей от 22 BYN и ремонт принтеров от 35 BYN с выездом в офис по Минску. Гарантия 6 месяцев, документы с НДС, каждая 7-я заправка бесплатно. Звоните, Viber, Telegram.">
+  <title>{{ page.title }} — СтиланаБел</title>
+  <meta name="description" content="{{ page.description }}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0D1B2A">
   <meta name="format-detection" content="telephone=no">
@@ -79,6 +84,9 @@
 
   <header class="top">
     <div class="wrap top__in">
+      <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
       <a class="logo" href="/" aria-label="СтиланаБел — сервис оргтехники">
         <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span class="logo__text">СтиланаБел <small>сервис оргтехники</small></span>
@@ -95,6 +103,14 @@
   </header>
 
   <main id="main">
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="/">Главная</a>
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="/blog/">Блог</a>
+      <a href="#steps">Как работаем</a>
+      <a href="#contacts">Контакты</a>
+    </div>
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__text">
@@ -230,6 +246,26 @@
             <li>Модель принтера или картриджа</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="blog">
+      <div class="wrap">
+        <h2>Блог</h2>
+        <p class="sub">Практические советы от наших сервисных инженеров.</p>
+        {% if site.posts.size > 0 %}
+        <div class="blog-list">
+          {% for post in site.posts limit: 3 %}
+          <article class="blog-card">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B %Y' }}</time>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="blog-card__excerpt">{{ post.description | escape }}</p>
+            <a class="blog-card__link" href="{{ post.url }}">Читать далее →</a>
+          </article>
+          {% endfor %}
+        </div>
+        <p class="cta-line"><a href="/blog/">Все статьи →</a></p>
+        {% endif %}
       </div>
     </section>
   </main>
