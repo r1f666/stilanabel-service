@@ -22,18 +22,13 @@ layout: default
     <div class="post-nav__inner">
       <h2 class="post-nav__title">Читайте также</h2>
       <div class="post-nav__list">
-        <a href="/2026/11/03/chistka-printera.html" class="post-nav__card">
-          <span class="post-nav__card-title">Почему принтер печатает с полосами и как это исправить</span>
+        {% for post in site.posts %}
+        {% if post.url != page.url %}
+        <a href="{{ post.url }}" class="post-nav__card">
+          <span class="post-nav__card-title">{{ post.title }}</span>
         </a>
-        <a href="/2026/11/12/printer-privychki.html" class="post-nav__card">
-          <span class="post-nav__card-title">Принтер в офисе: 5 привычек, которые убивают технику</span>
-        </a>
-        <a href="/2026/11/13/uborka-v-ofise.html" class="post-nav__card">
-          <span class="post-nav__card-title">Уборка в офисе и техника: что можно протирать, а что нельзя</span>
-        </a>
-        <a href="/2026/11/15/kak-zapravit-kartridzh-samostoyatelno.html" class="post-nav__card">
-          <span class="post-nav__card-title">Как заправить картридж самостоятельно: руководство для лазерных и струйных принтеров</span>
-        </a>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
     <div class="post-nav__inner">
