@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HP LaserJet P1102 и P1102w: картридж 85A (CE285A), заправка и ресурс"
-date: 2026-11-21
+date: 2026-11-20
 description: "Какой картридж нужен HP LaserJet P1102 и P1102w, чем 85A отличается от 12A, цена заправки в Минске и типичные проблемы."
 breadcrumbs:
   - text: Главная
