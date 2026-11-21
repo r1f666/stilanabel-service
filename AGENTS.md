@@ -30,11 +30,11 @@
 │   │   ├── default.html          # Базовый шаблон (хедер, футер, хлебные крошки, док-навигация)
 │   │   └── post.html             # Шаблон для статей блога
 │   ├── _posts/                   # Статьи блога (Jekyll posts)
-│   │   ├── chistka-printera.md
-│   │   ├── printer-privychki.md
-│   │   ├── uborka-v-ofise.md
-│   │   ├── kak-zapravit-kartridzh-samostoyatelno.md
-│   │   └── hp-laserjet-p1102-kartridzh-85a.md
+│   │   ├── 2026-11-03-chistka-printera.md
+│   │   ├── 2026-11-12-printer-privychki.md
+│   │   ├── 2026-11-13-uborka-v-ofise.md
+│   │   ├── 2026-11-15-kak-zapravit-kartridzh-samostoyatelno.md
+│   │   └── 2026-11-20-hp-laserjet-p1102-kartridzh-85a.md
 │   └── blog/
 │       └── index.html            # Страница каталога блога
 ```
@@ -126,18 +126,18 @@ breadcrumbs:
 ```
 
 ### Правила именования файлов
-- Формат: `kratkoe-nazvanie.md` (без даты в имени)
+- Формат: `YYYY-MM-DD-kratkoe-nazvanie.md`
 - Разделитель: дефис `-`
 - Строчные буквы, латиница
-- Дата указывается в YAML-фронтматтере (`date:`)
-- Пример: `chistka-printera.md`, `hp-laserjet-p1102-kartridzh-85a.md`
+- Дата в имени файла + дата в YAML-фронтматтере (`date:`)
+- Пример: `2026-11-03-chistka-printera.md`, `2026-11-20-hp-laserjet-p1102-kartridzh-85a.md`
 
 ### Текущие статьи
-1. `chistka-printera.md` — «Почему принтер печатает с полосами…» — URL: `/blog/chistka-printera/`
-2. `printer-privychki.md` — «Принтер в офисе: 5 привычек…» — URL: `/blog/printer-privychki/`
-3. `uborka-v-ofise.md` — «Уборка в офисе и техника…» — URL: `/blog/uborka-v-ofise/`
-4. `kak-zapravit-kartridzh-samostoyatelno.md` — «Как заправить картридж самостоятельно…» — URL: `/blog/kak-zapravit-kartridzh-samostoyatelno/`
-5. `hp-laserjet-p1102-kartridzh-85a.md` — «HP LaserJet P1102 и P1102w: картридж 85A…» — URL: `/blog/hp-laserjet-p1102-kartridzh-85a/`
+1. `2026-11-03-chistka-printera.md` — «Почему принтер печатает с полосами…» — URL: `/blog/chistka-printera/`
+2. `2026-11-12-printer-privychki.md` — «Принтер в офисе: 5 привычек…» — URL: `/blog/printer-privychki/`
+3. `2026-11-13-uborka-v-ofise.md` — «Уборка в офисе и техника…» — URL: `/blog/uborka-v-ofise/`
+4. `2026-11-15-kak-zapravit-kartridzh-samostoyatelno.md` — «Как заправить картридж самостоятельно…» — URL: `/blog/kak-zapravit-kartridzh-samostoyatelno/`
+5. `2026-11-20-hp-laserjet-p1102-kartridzh-85a.md` — «HP LaserJet P1102 и P1102w: картридж 85A…» — URL: `/blog/hp-laserjet-p1102-kartridzh-85a/`
 
 ### Структура контента статьи
 - Вводный абзац (контекст + авторитет «Мы в «СтиланаБел»…»)
@@ -210,7 +210,7 @@ HP, Canon, Brother, Samsung, Epson, Kyocera, Xerox, Ricoh
 ## Правила работы с проектом
 
 ### Добавление новой статьи
-1. Создать файл `docs/_posts/kratkoe-nazvanie.md` (без даты в имени)
+1. Создать файл `docs/_posts/YYYY-MM-DD-kratkoe-nazvanie.md`
 2. Заполнить YAML-фронтматтер (`layout`, `title`, `date`, `description`, `keywords`, `breadcrumbs`)
 3. Написать контент: вводный абзац, разделы `##`, советы, CTA
 4. Обновить `docs/sitemap.xml` (добавить URL статьи: `/blog/slug/`)
@@ -241,7 +241,7 @@ HP, Canon, Brother, Samsung, Epson, Kyocera, Xerox, Ricoh
 4. **Аналитика** — `YM_ID = 0` в `main.js` нужно заменить на реальный ID
 5. **Язык** — `lang="ru"` на всех страницах
 6. **Посты** — не используют `excerpt` из Jekyll, описание берётся из фронтматтера `description`
-7. **URL статей** — формат `/blog/slug/`, slug берётся из имени файла без `.md`
-8. **Имена файлов** — без даты, только slug (например: `chistka-printera.md`)
-9. **Дата** — указывается в YAML-фронтматтере (`date: YYYY-MM-DD`)
+7. **URL статей** — формат `/blog/slug/`, slug берётся из имени файла (Jekyll автоматически убирает дату)
+8. **Имена файлов** — с датой в формате `YYYY-MM-DD-slug.md` (например: `2026-11-03-chistka-printera.md`)
+9. **Дата** — дублируется в имени файла и в YAML-фронтматтере (`date: YYYY-MM-DD`)
 10. **Keywords** — обязательно добавлять в фронтматтер каждой статьи
