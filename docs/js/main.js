@@ -24,21 +24,49 @@
   var burger = document.querySelector('.burger');
   var mobileNav = document.querySelector('.mobile-nav');
   if (burger && mobileNav) {
+    var menuOpen = false;
+    var scrollThreshold = 100;
+    var ticking = false;
+
     burger.addEventListener('click', function () {
-      var open = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!open));
-      mobileNav.hidden = open;
+      menuOpen = !menuOpen;
+      burger.setAttribute('aria-expanded', String(menuOpen));
+      mobileNav.hidden = !menuOpen;
     });
+
     // Закрыть при клике на ссылку
     mobileNav.addEventListener('click', function () {
+      menuOpen = false;
       burger.setAttribute('aria-expanded', 'false');
       mobileNav.hidden = true;
     });
+
     // Сбросить при ресайзе выше 900px
     window.addEventListener('resize', function () {
       if (window.innerWidth > 900) {
+        menuOpen = false;
         burger.setAttribute('aria-expanded', 'false');
         mobileNav.hidden = true;
+      }
+    });
+
+    // Мобильное меню появляется при прокрутке вниз
+    function updateMobileNavVisibility() {
+      var scrollY = window.scrollY;
+      if (scrollY > scrollThreshold) {
+        mobileNav.hidden = !menuOpen;
+      } else {
+        menuOpen = false;
+        burger.setAttribute('aria-expanded', 'false');
+        mobileNav.hidden = true;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateMobileNavVisibility);
+        ticking = true;
       }
     });
   }
